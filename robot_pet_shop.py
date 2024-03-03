@@ -1,3 +1,6 @@
+### where is the interactivity?
+### where is the robot status change? why not in the class itself?
+
 class robot:
     def __init__(self,name,id,battery_type,in_repair = False,
                  for_sale = True ,broken= False, 
@@ -58,6 +61,7 @@ class store:
 
     def go_to_repair(self, robot):
         for r in self.pets:
+            ### is this the correct way to compare?
             if r==robot:
                 balance -= r.cost_to_fix_per_day
                 r.for_sale = False
@@ -66,6 +70,7 @@ class store:
          
 
     def end_of_day(self):
+        ### is this the right way? what happens when you call function without ()?
         self.balance -= self.calculte_daily_employees_salary_cost
 
     def buy_a_robot(self, robot):
